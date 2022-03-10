@@ -95,3 +95,23 @@ nameRx.findall('First Name: Will Last Name: Smith') #return a tuple [(Will, Smit
 
 dootStarAll = re.compile('.*', re.DOTALL) #to inclide line breaks
 vowelRx = re.compile(r'[aeiou]', re.I) #to ignore case and match lower & upper case
+
+#Regex sub() Method and Verbose Mode
+#you can use regex to find/replace
+
+codeNameRx = re.compile(r'Agent \w+')
+codeNameRx.findall('Agent Bourne handed off the file to Agent Bond') # return [Agent Bourne, Agent Bond]
+codeNameRx.sub('REDACTED', 'Agent Bourne handed off the file to Agent Bond')
+#returns 'REDACTED handed off the file to REDACTED'
+codeNameRx = re.compile(r'Agent (\w)\w*') #return first letter of each agent
+codeNameRx.sub('Agent \1****', 'Agent Bourne handed off the file to Agent Sandiego') #replace agent name with Agent 1st letter group (\1)
+#returns 'Agent B**** handed off the file to Agent S****'
+
+#Verbose Mode - allows us to use white space/ line breaks in our regex
+newVariable = re.compile(r'''
+\d\d\d  #I can even put in comments
+-
+\d\d\d
+-
+\d\d\d\d
+  ''', re.VERBOSE) # I can also pss multiple params as the second -> re.VERBOSE | re.DOTALL | re.IGNORECASE
