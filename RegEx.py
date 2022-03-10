@@ -67,4 +67,31 @@ phoneNumRegex.findall() #returns list of strings that match the pattern
 #if the regex has more than one group it will return tuples of results (tuples can have more than two items inside)
 
 
-xmas = "12 Drummers Drumming, 11 Pipers Piping, 10 Lords a Leaping, 9 Ladies Dancing, 8 Maids Milking. 7 Swans Swimming, 6 Geese Laying, 5 golden rings, 4 turtle doves, 3 french hens, 2 turtle doves, 1 Partridge in Pear tree "
+xmas = "12 Drummers Drumming, 11 Pipers Piping, 10 Lords a Leaping, 9 Ladies Dancing, 8 Maids Milking. 7 Swans Swimming, 6 Geese Laying, 5 golden rings, 4 turtle doves, 3 french hens, 2 turtle doves, 1 Partridge in Pear tree"
+
+xmasReg= re.compile(r'\d+\s\w+') #looking for atleast 1 digit then a space and then atleast one character
+
+#make you own character class []
+vowelRx = re.compile(r'[aeiou]') #which is the same as (a|e|i|o|u)
+doubleVowelRx = re.compile(r'[aeiou]{2}') #looking for atleset two vals next to each other oo ae etc
+negativevowelRx = re.compile(r'^[aeiou]') #everything but vowels including punctuation and white space
+rangeRx = re.compile(r'[a-zA-F]') #all lowercase letters but Uppercase A-F
+
+#Regex Dot-Star and the Caeret/Dallar Chars
+
+beginsWithRx = re.compile(r'^Hello') #has to be at the very beginning of the string
+endsWithRx = re.compile(r'world!$') #has to be at the very end
+
+  #wildcard dot .
+
+atRegex =re.compile(r'.at')
+atRegex.findall("The fat cat sat around the flat") #  should return all words with single char in front of at
+
+  #.* any character accept for new line
+nameRx = re.compile(r'First Name: (.*) Last Name: (.*)') #return zero or more of whatever character exists here
+nameRx.findall('First Name: Will Last Name: Smith') #return a tuple [(Will, Smith)]
+
+#.* is greedy, you would have to use .*? for non greedy
+
+dootStarAll = re.compile('.*', re.DOTALL) #to inclide line breaks
+vowelRx = re.compile(r'[aeiou]', re.I) #to ignore case and match lower & upper case
