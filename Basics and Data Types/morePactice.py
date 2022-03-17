@@ -1,4 +1,7 @@
 
+import random
+import pyperclip
+
 # spam = ''
 
 # while spam != 'your name':

@@ -1,4 +1,4 @@
-# Dictionaries (basically object)
+# Dictionaries (basically objects)
 
 cat = {'size' : "large", 'colour': 'black', 'dispo': 'honourable'}
 
