@@ -25,4 +25,12 @@ practiceFile.write(' So much writing, its pretty great') #We can keep writing as
 
 #Shelves - let you pass on variables and information to other files
 
+shelFile = shelve.open('mydata') #returns a shelf file
+#you can adjust files to shelves as if it were a dictionary
+
+shelfFile['cats'] = ['garfield', 'tom', 'cleo']
+
+shelfFile.close() #saves a bunch of bniary files
+
+#they have .keys() and .values
 
