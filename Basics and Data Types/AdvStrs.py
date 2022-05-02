@@ -52,4 +52,4 @@ print(myStr.split('t'))
 
 #STRING INTERPOLATION
 
-'You can put variables with an %s and where there is a %s the varible you define on the other side of %s will show' % (pets, myStr, sndStr)
+print('You can put variables with an %s and where there is a %s the varible you define on the other side of %s will show' % (pets, myStr, sndStr))
