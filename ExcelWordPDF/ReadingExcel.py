@@ -1,5 +1,4 @@
 #! /usr/bin/env python3
-from tkinter.tix import COLUMN
 import openpyxl
 import os
 
